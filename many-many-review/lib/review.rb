@@ -23,6 +23,22 @@ class Review
     def self.most_reviews 
         # we need to iterate through all reviews
         # and find the viewer with the most reviews
+        max_views = 0 
+        viewer = nil
+        Viewer.all.each do  | each_viewer  |
+            if each_viewer.reviews.length > max_views
+                max_views = each_viewer.reviews.length
+                viewer = each_viewer
+            end
+        end
+        viewer
+    end
+
+    def names
+        # I want the name of all viewers who had made a review
+        Review.all.map do | review |
+            review.viewer.name
+        end 
     end
 
 
