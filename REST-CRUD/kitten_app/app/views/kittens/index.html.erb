@@ -1,0 +1,9 @@
+<h1>This is my cats index page</h1>
+
+<ul>
+<%@kittens.each do | k |%>
+    <li>
+        <%=k.name%>
+    </li>
+<%end%>
+</ul>
