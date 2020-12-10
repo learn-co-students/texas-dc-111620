@@ -1,0 +1,21 @@
+<h1>This is my new playdate form</h1>
+
+<%= form_for @playdate do  | f | %>
+<%= f.label :person_id %>
+<br/>
+<%= f.collection_select :person_id, Person.all, :id, :name  %>
+<br/>
+<%= f.label :date%>
+<br/>
+<%= f.text_field :date%>
+<br/>
+<%= f.label :time%>
+<br/>
+<%= f.number_field :time%>
+<br/>
+<%= f.label :kitten_id%>
+<br/>
+<%= f.collection_check_boxes :kitten_id, Kitten.all, :id, :name%>
+<br/>
+<%= f.submit%>
+<% end %>

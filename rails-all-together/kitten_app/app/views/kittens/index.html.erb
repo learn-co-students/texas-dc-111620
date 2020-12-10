@@ -1,0 +1,14 @@
+<h1>This is my cats index page</h1>
+
+<ul>
+<%@kittens.each do | k |%>
+
+        <%= link_to k.name, kitten_path(k)%>
+    
+<%end%>
+</ul>
+
+
+<br/> 
+
+<%= link_to "New Kitten Form", kittens_new_path%>
