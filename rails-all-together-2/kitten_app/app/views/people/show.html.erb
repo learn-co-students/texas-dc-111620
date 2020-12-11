@@ -1,0 +1,16 @@
+<h1>This is my show page for People</h1>
+
+<h2> <%= @person.name  %> </h2>
+<hr/>
+<h3>These are <%= @person.name %>'s playdates in the future:  </h3>
+
+<% @person.playdates.each do | pd | %>
+<li> <%= pd.date %> : <%= pd.time %> minutes, with 
+<%= link_to pd.kitten.name, kitten_path(pd.kitten) %> 
+
+<%= form_for pd, method: :delete do | f |%>
+<%= f.submit "Cancel Playdate"%>
+<% end %>
+
+</li>
+<% end %>

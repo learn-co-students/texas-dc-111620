@@ -1,0 +1,19 @@
+<h1>This should be my new page for kittens/new</h1>
+
+
+<%= form_for @kitten do | f | %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br/>
+    <%= f.label :age %>
+    <%= f.number_field :age %>
+    <br/>
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+    <br/>
+    <%= f.label :personality %>
+    <%= f.text_field :personality %>
+    <br/>
+    <%= f.submit %> 
+<% end %>
+
