@@ -13,9 +13,15 @@ class KittensController < ApplicationController
     end
 
     def create 
-        @kitten = Kitten.create(name: params[:kitten][:name], )
-        # byebug
-        redirect_to kittens_path
+        @kitten = Kitten.new(kitten_params)
+        if @kitten.valid?
+            @kitten.save
+            redirect_to kittens_path
+        else
+            flash[:errors] = @kitten.errors.full_messages
+            redirect_to new_kitten_path
+        end
+
     end
 
     def kitten_params
